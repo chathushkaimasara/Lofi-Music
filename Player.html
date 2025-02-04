@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lofi Music</title>
+    <link rel="icon" href="Images/logo.png">
+    <link rel="stylesheet" href="Player/Player.css">
+</head>
+<body>
+    <a href="index.php">
+        <button class="back">HOME</button>
+    </a>
+    <video autoplay muted loop plays-incline class="backvideo">
+        <source src="Player/bgvid.mp4" type="video/mp4">
+    </video>
+    <div class="container">
+        <div class="slider">
+            <div class="slides"  style="--img: url('https://miro.medium.com/v2/resize:fit:1400/1*NkL4lcmr6MArb8XFFJDBUg.gif')">
+                <div class="content"></div>
+            </div>
+            <div class="slides"  style="--img: url('https://miro.medium.com/v2/resize:fit:1280/0*YyL79g0pgvpMnzta')">
+                <div class="content"></div>
+            </div>
+            <div class="slides"  style="--img: url('https://art.pixilart.com/sr2783e83501b88.gif')">
+                <div class="content"></div>
+            </div>
+            <div class="slides"  style="--img: url('https://cdnb.artstation.com/p/assets/images/images/029/320/295/original/bogdan-mb0sco-coffeeanim.gif?1601147277')">
+                <div class="content"></div>
+            </div>
+            <div class="slides"  style="--img: url('https://64.media.tumblr.com/5c7e29ee86fef5c4f28a41fd7b87760a/dd034569f7de3a64-f4/s640x960/4b1149fc211ed0f50105fc4cb72265bbc7fd1657.gif')">
+                <div class="content"></div>
+            </div>
+        </div>
+        <div class="clock" id="clock">00:00</div>
+        <script src="Player/Player.js"></script>
+        <div class="buttons">
+            <span class="prev"></span>
+            <span class="next"></span>
+        </div>
+        <div class="m">
+            <img src="Images/play.png" id="icon">
+        </div>
+    </div>
+    <script>
+        let next = document.querySelector('.next'); 
+        let prev = document.querySelector('.prev'); 
+        let slider = document.querySelector('.slider');
+
+        next.addEventListener('click', function(){ 
+            let slides = document.querySelectorAll('.slides'); 
+            slider.appendChild(slides[0]);
+        })
+    
+        prev.addEventListener('click', function(){ 
+            let slides = document.querySelectorAll('.slides'); 
+            slider.prepend (slides [slides.length - 1]); 
+        })
+    </script>
+    <audio src="music.mp3" id="mysong"></audio>
+
+    <script>
+        var mysong = document.getElementById("mysong");
+        var icon = document.getElementById("icon");
+
+        icon.onclick = function(){
+            if(mysong.paused){
+                mysong.play();
+                icon.src = "images/pause.png";
+            }
+            else{
+                mysong.pause();
+                icon.src = "images/play.png";
+            }
+        }
+    </script>
+</body>
+</html>
