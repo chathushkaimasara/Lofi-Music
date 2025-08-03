@@ -1,7 +1,9 @@
 # Lofi-Music
 
 Lofi Music is elegant lofi style display with calm music.
+
 DISCLAMER: I dont own any of those images or music. This is a test project for my University.
+
 Enter Website here = https://chathushkaimasara.github.io/Lofi-Music/
 
 Launched website doesnt support php so after you download it to the ht docs on xampp,
